@@ -30,7 +30,7 @@ async function main () {
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQyYTcyYWM3ZTEzQzU2OGMyYTQ2QzM5NTJhM0VjNUFkNkY1MUU1N0UiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2OTk2NzgzOTk5ODAsIm5hbWUiOiJmaXJzdCJ9.aZDcRrIesie3sDqQOLRj-NQTHPcpcfB-aSgGgIsurnY';
   const storage = new Web3Storage({ token })
 //   const files = []
-const name = './new-path.txt';
+const name = './../frontend/social/build';
   const pathFiles = await getFilesFromPath(name)
 
 //   for (const path of args._) {
@@ -50,7 +50,7 @@ let call = ()=>{
   return ss;
 }
 
-// call();
+call();
 
-module.exports = call;
+// module.exports = call;
 
