@@ -1,0 +1,33 @@
+#mint{
+    background-color:lightGreen;
+
+}
+.btnnav{
+    animation:navbtn;
+    animation-duration:2s;
+}
+.nav{
+    top:0px;
+    margin:30px;
+    position: sticky;
+    animation:navani;
+    animation-duration:1s;
+}
+#search{
+    padding:13;
+    height:3px;
+}
+
+
+
+
+
+@keyframes navbtn{
+    from{margin-top:-40px}
+    to{margin-top:0px}
+}
+
+@keyframes navani{
+    from{margin:-50px}
+    to{margin:30px}
+}
