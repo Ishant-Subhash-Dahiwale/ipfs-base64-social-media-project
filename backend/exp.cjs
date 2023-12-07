@@ -14,7 +14,6 @@ app.get('/api',  (req,res)=>{
         response => response.blob
     ).then(data=>{
         res.send(actual);
-
     });
 
 

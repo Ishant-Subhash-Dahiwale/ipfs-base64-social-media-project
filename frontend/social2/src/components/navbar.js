@@ -1,8 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import { TextField,ButtonGroup, Card } from '@mui/material';
-import "./navbar.css"
-
+import "./navbar.css";
 
 function navbar() {
   return (
@@ -29,7 +28,6 @@ function navbar() {
             </div>
             </Card>
 
-        <br></br>
         
         
         </div>

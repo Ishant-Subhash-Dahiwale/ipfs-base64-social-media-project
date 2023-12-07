@@ -1,5 +1,5 @@
 const { Web3Storage ,getFilesFromPath} = require( 'web3.storage');
-// var fs = require('fs');
+const fs = require('fs');
 
 // function to encode file data to base64 encoded string
 // function base64_encode(file) {
@@ -30,7 +30,7 @@ async function main () {
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQyYTcyYWM3ZTEzQzU2OGMyYTQ2QzM5NTJhM0VjNUFkNkY1MUU1N0UiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2OTk2NzgzOTk5ODAsIm5hbWUiOiJmaXJzdCJ9.aZDcRrIesie3sDqQOLRj-NQTHPcpcfB-aSgGgIsurnY';
   const storage = new Web3Storage({ token })
 //   const files = []
-const name = './../frontend/social/build';
+const name = './ipfs.json';
   const pathFiles = await getFilesFromPath(name)
 
 //   for (const path of args._) {
@@ -42,7 +42,9 @@ const name = './../frontend/social/build';
   const cid = await storage.put(pathFiles)
   console.log('Content added with CID:', cid)
   console.log(`${cid}.ipfs.w3s.link/${name}`);
+
   ss=cid+".ipfs.w3s.link/"+name;
+  fs.writeFileSync("./cid.txt",ss);
 }
 
 let call = ()=>{
@@ -50,7 +52,7 @@ let call = ()=>{
   return ss;
 }
 
-call();
+// call();
 
-// module.exports = call;
+module.exports = call;
 

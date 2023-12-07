@@ -1,0 +1,79 @@
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  /* animation: backgr ease infinite 20s; */
+}
+
+#cardspanout {
+  /* animation: backgr ease infinite 20s; */
+  backdrop-filter: blur(2px);
+  background:url("./login/winter.jpg");
+  margin: 20px;
+  
+
+}
+
+.card {
+  margin:30px;
+  /* padding: 20px; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #345343;
+  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(2px);
+  animation: backgr ease infinite 25s;
+
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #aeae;
+  animation:  ease infinite 25s;
+
+
+}
+
+#prev {
+  background-color: #aeae;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#image {
+  display: block;
+  max-width: 500px;
+  height: auto;
+}
+
+@keyframes backgroundgr {
+  0%, 100% {
+    background: linear-gradient(#7071e8, #ed9ed6, #fff);
+  }
+  20% {
+    background: linear-gradient(#c683d7, #7071e8, #c683d7);
+  }
+  50% {
+    background: linear-gradient(#c683d7, #f9f, #c683d7);
+  }
+  70% {
+    background: linear-gradient(#ed9ed6, #ffc7c7, #7071e8);
+  }
+}
+
+  @keyframes backgr {
+    0%, 100% {
+      background: #8ecfc9
+    }
+    20% {
+      background: #ffbe7a
+    }
+    50% {
+      background: #fa7f6f
+    }
+    70% {
+      background: #c683d7
+    }
+  }
