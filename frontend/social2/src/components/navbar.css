@@ -2,6 +2,10 @@
     background-color:lightGreen;
 
 }
+#post{
+    background-color:#ff5;
+
+}
 .btnnav{
     animation:navbtn;
     animation-duration:2s;

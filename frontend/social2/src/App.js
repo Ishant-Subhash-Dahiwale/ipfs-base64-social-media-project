@@ -1,10 +1,10 @@
 import Web3 from 'web3';
 import StringStorageContract from './contracts/StringStorage.json'; // Import your contract ABI
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import navbar from './components/navbar';
-import postcard from './components/postcard/postcard';
+import Navbar from './components/navbar';
+import Postcard from './components/postcard/postcard';
 import axios from "axios";
 import { Button } from '@mui/material';
 
@@ -35,7 +35,7 @@ import { Button } from '@mui/material';
   // }
 
 
-const contractAddress = '0xf52d6de396E686d758D7742101c0d971CF0773a3';
+const contractAddress = '0x35E91591E3e0A57d911ebA57c692023aB66F79a5';
 const contract = new web3.eth.Contract(StringStorageContract, contractAddress);
 
 
@@ -85,14 +85,68 @@ async function saveString(newString) {
     })
   }
   
-  const [f,setf] = useState('');
+  const [f,setf] = useState({});
+  let rr =[];
 
-  return (
+
+  // const [img,setimg] = useState('');
+  // // Example: Call a view function
+  async function getString(index) {
+    const result = await contract.methods.getString(index).call();
+    console.log('String at index', index, ':', result);
+    // setimg(s);
+    // let i = await axios.get("https://bafybeigblhffy6jq2ntpviby2eacgvimgc5s6eceggysmv7oani3f4ksra.ipfs.w3s.link/ipfs.json");
+    let i = await axios.get(`https://${result}`);
+    console.log(i);
+    // setList( i.data.name);
+    console.log(i.data);
+
+    return i.data.picture.toString();
+
+  }
+
+
+
+  //   // setimg(i.data.picture);
+  //   // return result;
+  // }
+
+
+
+
+  
+
+
+    // useEffect(() => {
+    //   for (let k = 1; k < 5; k++) {
+    //     // const element = array[k];
+    //    let r =  getString(k);
+    //    rr+=r;
+    //    // setf(r);
+    //   }
+    // }, []);
+    const [mar,setmar] = useState(''); 
+
+  function postadd(index) {
+  let r =  getString(index);
+
+console.log("wrhe",r);
+
+    return(
+    <Postcard name="kjs"/>
+    )
+  }
+  
+const [inn,setinn] = useState(1);
+
+
+return (
     <div className="App">
-      {navbar()}
+            {/* <img src='./components/smd.jpg' alt='Social Media Dapp' ></img> */}
 
-      <div>
-        <div>
+<Navbar/>    
+  <div>
+        {/* <div>
           <Button onClick={ async()=>{
  let  a = await axios.get("https://bafybeigekwf3tkpyfguwxtaetbu5yz2uywdweskcxttsr7jt3igoc4d5ye.ipfs.w3s.link/ipfs.json");
  console.log(a);
@@ -104,31 +158,28 @@ async function saveString(newString) {
           <br></br>
             {f}
 
-        </div>
-        {/* // Add buttons or UI elements to trigger the functions */}
-<button onClick={async() => {await connectWallet()}}>Connect Wallet</button>
- <button onClick={() => getString(0)}>Get String</button>
-<button onClick={() => saveString('Hello Ethereum')}>Save String</button> 
+        </div> */}
+        {/* {postadd(1)} */}
+<div >
+  <Button variant="contained" onClick={()=>{
+    
+  console.log(inn);
+// integer=integer-1;
 
-<br></br>
+// console.log(integer);
+setinn(inn-1)
+  }}>prev</Button>
+<Postcard name="lldslf" i={inn}/>
+<Button variant="contained" onClick={()=>{
+  console.log(inn);
+// integer=inn+1;
 
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-{postcard()}
-      {/* <div>{e}sklcdsldv</div> */}
-<img src={e} alt="kjsbfhw"></img>
-   
+console.log(inn);
+setinn(inn+1)
+
+  }}>next</Button>
+
+</div>
       </div>
 
       <footer>

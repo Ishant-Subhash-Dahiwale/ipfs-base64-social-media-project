@@ -30,7 +30,7 @@ async function main () {
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQyYTcyYWM3ZTEzQzU2OGMyYTQ2QzM5NTJhM0VjNUFkNkY1MUU1N0UiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2OTk2NzgzOTk5ODAsIm5hbWUiOiJmaXJzdCJ9.aZDcRrIesie3sDqQOLRj-NQTHPcpcfB-aSgGgIsurnY';
   const storage = new Web3Storage({ token })
 //   const files = []
-const name = './ipfs.json';
+const name = './Metadata.json';
   const pathFiles = await getFilesFromPath(name)
 
 //   for (const path of args._) {
@@ -41,18 +41,18 @@ const name = './ipfs.json';
   console.log(`Uploading  files`)
   const cid = await storage.put(pathFiles)
   console.log('Content added with CID:', cid)
-  console.log(`${cid}.ipfs.w3s.link/ipfs.json`);
+  console.log(`${cid}.ipfs.w3s.link/Metadata.json`);
 
-  ss=cid+".ipfs.w3s.link/ipfs.json";
+  ss=cid+".ipfs.w3s.link/Metadata.json";
   fs.writeFileSync("./cid.txt",ss);
 }
 
-let call = ()=>{
+let mcall = ()=>{
   main();
   return ss;
 }
 
 // call();
 
-module.exports = call;
+module.exports = mcall;
 

@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import Post from "./pages/post.js";
 import Login from "./pages/login/login.js";
-
+import Mint from "./pages/mint/mint.js";
 export default function app() {
 
   return (
@@ -15,6 +15,7 @@ export default function app() {
       <Route   path="/" element={<App></App>}/>
       <Route  path="post"  element={<Post/>} />
       <Route  path="login"  element={<Login/>} />
+      <Route  path="mint"  element={<Mint/>} />
 
       </Routes>
       </div>
